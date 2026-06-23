@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "rubio"
+version = "1.0.0"
+description = "کتابخانه پایتون برای Bot API روبیکا — ساده، سریع و کامل"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+authors = [
+    { name = "Rubio Contributors" }
+]
+keywords = ["rubika", "bot", "api", "rubio", "messaging", "iran"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: Persian",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Communications :: Chat",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "requests>=2.28.0",
+    "urllib3>=1.26.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-mock>=3.10",
+    "responses>=0.23",
+    "black",
+    "isort",
+    "mypy",
+]
+flask = ["flask>=2.0"]
+fastapi = ["fastapi>=0.95", "uvicorn"]
+
+[project.urls]
+Homepage = "https://github.com/your-username/rubio"
+Documentation = "https://github.com/your-username/rubio#readme"
+Repository = "https://github.com/your-username/rubio"
+"Bug Tracker" = "https://github.com/your-username/rubio/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["rubio*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py38"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.8"
+strict = false
+ignore_missing_imports = true
